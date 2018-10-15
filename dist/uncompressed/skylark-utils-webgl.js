@@ -80,10 +80,6 @@
 
 })(function(define,require) {
 
-define('skylark-utils/skylark',["skylark-langx/skylark"], function(skylark) {
-    return skylark;
-});
-
 define('skylark-utils-webgl/webgl',[
     "skylark-utils/skylark"
 ], function(skylark) {
