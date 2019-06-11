@@ -1,5 +1,5 @@
 /**
- * skylark-utils-webgl - The skylark webgl utility library.
+ * skylark-graphics-webgl - The skylark webgl utility library.
  * @author Hudaokeji Co.,Ltd
  * @version v0.9.0
  * @link www.skylarkjs.org
@@ -37,11 +37,16 @@
                 deps: deps.map(function(dep){
                   return absolute(dep,id);
                 }),
+                resolved: false,
                 exports: null
             };
             require(id);
         } else {
-            map[id] = factory;
+            map[id] = {
+                factory : null,
+                resolved : true,
+                exports : factory
+            };
         }
     };
     require = globals.require = function(id) {
@@ -49,14 +54,15 @@
             throw new Error('Module ' + id + ' has not been defined');
         }
         var module = map[id];
-        if (!module.exports) {
+        if (!module.resolved) {
             var args = [];
 
             module.deps.forEach(function(dep){
                 args.push(require(dep));
             })
 
-            module.exports = module.factory.apply(window, args);
+            module.exports = module.factory.apply(globals, args) || null;
+            module.resolved = true;
         }
         return module.exports;
     };
@@ -72,7 +78,7 @@
     var skylarkjs = require("skylark-langx/skylark");
 
     if (isCmd) {
-      exports = skylarkjs;
+      module.exports = skylarkjs;
     } else {
       globals.skylarkjs  = skylarkjs;
     }
@@ -80,12 +86,12 @@
 
 })(function(define,require) {
 
-define('skylark-utils-webgl/webgl',[
-    "skylark-utils/skylark"
+define('skylark-graphics-webgl/webgl',[
+    "skylark-langx/skylark"
 ], function(skylark) {
 	return skylark.webgl = skylark.webgl || {};
 });
-define('skylark-utils-webgl/primitives/three',[],function() {
+define('skylark-graphics-webgl/primitives/three',[],function() {
 	'use strict';
 
 	// Polyfills
@@ -47618,7 +47624,7 @@ define('skylark-utils-webgl/primitives/three',[],function() {
 
 });
 
-define('skylark-utils-webgl/main',[
+define('skylark-graphics-webgl/main',[
     "skylark-langx/langx",
     "./webgl",
     "./primitives/three"
@@ -47628,7 +47634,8 @@ define('skylark-utils-webgl/main',[
     return webgl;
 });
 
-define('skylark-utils-webgl', ['skylark-utils-webgl/main'], function (main) { return main; });
+define('skylark-graphics-webgl', ['skylark-graphics-webgl/main'], function (main) { return main; });
 
 
 },this);
+//# sourceMappingURL=sourcemaps/skylark-graphics-webgl.js.map

@@ -1,5 +1,5 @@
 /**
- * skylark-utils-webgl - The skylark webgl utility library.
+ * skylark-graphics-webgl - The skylark webgl utility library.
  * @author Hudaokeji Co.,Ltd
  * @version v0.9.0
  * @link www.skylarkjs.org

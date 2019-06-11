@@ -1,4 +1,4 @@
-# skylark-utils-webgl
+# skylark-graphics-webgl
 The skylark webgl utility library
 
 ## Dependences
@@ -6,9 +6,7 @@ The skylark webgl utility library
 | Project                                                      | Status | Description                                     |
 | ------------------------------------------------------------ | ------ | ----------------------------------------------- |
 | [skylark-langx](https://github.com/skylarklangx/skylark-langx) |        | Javascript language extension library           |
-| [skylark-utils](https://github.com/skylarkutils/skylark-utils) |        | An Universal HTML5 Javascript Library           |
-| [skylark-utils-math](https://github.com/skylarkutils/skylark-utils-math) |        | The math features enhancement for skylark utils |
-| [skylark-utils-dom](https://github.com/skylarkutils/skylark-utils-dom) |        | An Universal DOM Utility Library                |
+
 
 ## Different builds
 
@@ -16,10 +14,10 @@ builds are in the directory dist.
 
 |                      | build                                   | Description              |
 | -------------------- | --------------------------------------- | ------------------------ |
-| full                 | skylark-utils-webgl-all.js              | included dependences     |
-| only                 | skylark-utils-webgl.js                  | not included dependences |
-| full （development） | uncompressed/skylark-utils-webgl-all.js | included dependences     |
-| only （development） | uncompressed/skylark-utils-webgl.js     | not included dependences |
+| full                 | skylark-graphics-webgl-all.js              | included dependences     |
+| only                 | skylark-graphics-webgl.js                  | not included dependences |
+| full （development） | uncompressed/skylark-graphics-webgl-all.js | included dependences     |
+| only （development） | uncompressed/skylark-graphics-webgl.js     | not included dependences |
 
 Please use the "full" version when using this library alone, and use the "only" version when using other skylark libraries.
 
@@ -27,9 +25,9 @@ Please use the "full" version when using this library alone, and use the "only" 
 
 You can get the latest version in many different ways:
 
-- Downloading [a ZIP file from master](https://github.com/skylarkutils/skylark-utils-webgl/archive/master.zip)
-- Cloning using Git: `git clone https://github.com/skylarkutils/skylark-utils-webgl.git`
-- Installing via NPM: `npm install https://github.com/skylarkutils/skylark-utils-webgl.git#master --save`
+- Downloading [a ZIP file from master](https://github.com/skylarkutils/skylark-graphics-webgl/archive/master.zip)
+- Cloning using Git: `git clone https://github.com/skylarkutils/skylark-graphics-webgl.git`
+- Installing via NPM: `npm install https://github.com/skylarkutils/skylark-graphics-webgl.git#master --save`
 
 ## Building 
 
