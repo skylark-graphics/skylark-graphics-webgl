@@ -3734,7 +3734,7 @@ define('skylark-langx/langx',[
 define('skylark-graphics-webgl/webgl',[
     "skylark-langx/skylark"
 ], function(skylark) {
-	return skylark.webgl = skylark.webgl || {};
+	return skylark.attach("graphics.webgl", {});
 });
 define('skylark-graphics-webgl/primitives/three',[],function() {
 	'use strict';

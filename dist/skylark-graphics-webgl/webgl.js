@@ -5,5 +5,5 @@
  * @link www.skylarkjs.org
  * @license MIT
  */
-define(["skylark-langx/skylark"],function(e){return e.webgl=e.webgl||{}});
+define(["skylark-langx/skylark"],function(a){return a.attach("graphics.webgl",{})});
 //# sourceMappingURL=sourcemaps/webgl.js.map
